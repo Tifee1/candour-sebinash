@@ -9,17 +9,24 @@ import SidebarTabLinks from './SidebarTabLinks'
 import SidebarMessages from './SidebarMessages'
 import SidebarProfile from './SidebarProfile'
 
+const getSidebarStatus = () => {
+  if (typeof window !== 'undefined') {
+    const savedCollapsedState = localStorage.getItem('sidebarCollapsed')
+    return savedCollapsedState ? JSON.parse(savedCollapsedState) : false
+  }
+  return false
+}
+
 const DesktopSidebar = () => {
   const currentRoute = usePathname()
 
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(
-    localStorage.getItem('sidebarCollapsed') === 'true' ? true : false
-  )
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(getSidebarStatus())
 
   useEffect(() => {
-    localStorage.setItem('sidebarCollapsed', JSON.stringify(isCollapsed))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('sidebarCollapsed', JSON.stringify(isCollapsed))
+    }
   }, [isCollapsed])
-
   return (
     <aside
       className={`hidden lg:flex trans bg-white py-8 ${
