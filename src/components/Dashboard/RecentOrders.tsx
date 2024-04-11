@@ -16,10 +16,10 @@ const RecentOrders = () => {
                 <input type='checkbox' name='' id='' />
               </th>
               <th className='p-4'></th>
-              <th className='p-4'>Product</th>
-              <th className='p-4'>Status</th>
-              <th className='p-4 te'>Quantity</th>
-              <th className='p-4'>Supplier</th>
+              <th className='p-4 min-w-[205px]'>Product</th>
+              <th className='p-4 min-w-[140px]'>Status</th>
+              <th className='p-4 min-w-[140px]'>Quantity</th>
+              <th className='p-4 min-w-[205px]'>Supplier</th>
             </tr>
           </thead>
           <tbody>

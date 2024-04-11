@@ -81,7 +81,7 @@ const LoginForm = () => {
       <div className='text-right'>
         <Link
           href='#'
-          className='trans text-black hover:text-black/70 font-medium text-base'
+          className='trans text-black hover:text-black/70 font-medium text-sm'
         >
           Forgot Password?
         </Link>
